@@ -9,13 +9,21 @@ $brand-primary:                    #c0392b;
 $jumbotron-bg:                     white;
 $panel-heading-padding:						 60px;
 
-
 @import 'bootstrap';
 
 .center {
      text-align: center;
+
 }
 
 .navbar-brand {
      font-weight: bold;
+}
+
+.container {
+		margin-bottom: 10px;
+}
+
+.row {
+     margin-bottom: 100px;	
 }

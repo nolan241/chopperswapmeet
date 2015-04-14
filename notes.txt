@@ -1,20 +1,7 @@
-# left of at
-https://onemonth.com/courses/one-month-rails/steps/pins-show-page
-
 
 Did not complete the upload to S3 part
 https://onemonth.com/courses/one-month-rails/steps/paperclip-to-amazon-s3-images-on-heroku
 https://devcenter.heroku.com/articles/s3#s3-setup
-
-
-add sticky footer?
-http://getbootstrap.com/examples/sticky-footer/
-http://getbootstrap.com/customize/#navs
-http://getbootstrap.com/javascript/#transitions
-https://github.com/twbs/bootstrap-sass
-http://stackoverflow.com/questions/12113886/rails-3-and-bootstrap-2-1-0-cant-fix-my-footer
-
-https://www.youtube.com/watch?v=KxmLNctBi10
 
 
 add user name?
