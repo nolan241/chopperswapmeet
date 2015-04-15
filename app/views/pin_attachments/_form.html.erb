@@ -1,0 +1,10 @@
+<%= image_tag @pin_attachment.pictures %>
+<%= form_for(@pin_attachment) do |f| %>
+  <div class="field">
+    <%= f.label :pictures %><br>
+    <%= f.file_field :pictures %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

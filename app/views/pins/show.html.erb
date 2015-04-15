@@ -6,7 +6,7 @@
 		<div class="panel panel-default">
 			
 			<div class="panel-body">
-				<h1><%= @pin.title %> - <%= @pin.price %></h1>
+				<h1><%= @pin.title %> <small> - $ <%= @pin.price %> </small></h1>
 			</div>
 
 			<div class="panel-heading center">
@@ -15,9 +15,8 @@
 			<div class="panel-body">
 				  <strong>Description:</strong>
 				  <%= @pin.description %><br>
-			
-					<strong>Price:</strong>
 				</p>
+
 
 				<% if @pin.user == current_user %>
 			      <%= link_to edit_pin_path(@pin) do %>
@@ -27,6 +26,14 @@
 						<%= link_to 'Destroy', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>|
 				<% end %>
 				<%= link_to 'Back', pins_path %>
+
+				<div class="panel-body">
+					<% @pin_attachments.each do |f| %>
+					  <%= image_tag f.pictures, :width => 650 %></br>
+					  <p><%= link_to 'Edit', edit_pin_attachment_path(f) %></p>
+					<% end %>
+				</div>
+
 			</div>
 		</div>
 	</div>

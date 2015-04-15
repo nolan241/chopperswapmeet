@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pin Attachments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pin</th>
+      <th>Pictures</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pin_attachments.each do |pin_attachment| %>
+      <tr>
+        <td><%= pin_attachment.pin_id %></td>
+        <td><%= pin_attachment.pictures %></td>
+        <td><%= link_to 'Show', pin_attachment %></td>
+        <td><%= link_to 'Edit', edit_pin_attachment_path(pin_attachment) %></td>
+        <td><%= link_to 'Destroy', pin_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pin attachment', new_pin_attachment_path %>

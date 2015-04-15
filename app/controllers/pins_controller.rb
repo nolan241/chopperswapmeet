@@ -15,21 +15,26 @@ class PinsController < ApplicationController
   end
 
   def show
+   @pin_attachments = @pin.pin_attachments.all
   end
 
   def new
     @pin = current_user.pins.build
+    @pin_attachment = @pin.pin_attachments.build
   end
 
   def edit
-  end
+  end 
 
   def create
     @pin = current_user.pins.build(pin_params)
-      if @pin.save
-        redirect_to @pin, notice: "Your Pin was successfully created."
-      else
-        render action: 'new'
+        if @pin.save
+            params[:pin_attachments]['pictures'].each do |a|
+              @pin_attachment = @pin.pin_attachments.create!(:pictures => a, :pin_id => @pin.id)
+            end        
+          redirect_to @pin, notice: "Your Pin was successfully created."
+        else
+          render action: 'new'
       end
   end
 
@@ -60,6 +65,6 @@ class PinsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     # what a user is able to do to form
     def pin_params
-      params.require(:pin).permit(:title, :description, :price, :image)
+      params.require(:pin).permit(:title, :description, :price, :image, :pin_attachments)
     end
 end

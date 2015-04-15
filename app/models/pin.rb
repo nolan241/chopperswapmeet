@@ -10,4 +10,9 @@ class Pin < ActiveRecord::Base
 	validates :price, presence: true
 	validates :title, presence: true
 
+	#carrierwave 
+  has_many :pin_attachments
+	accepts_nested_attributes_for :pin_attachments
+
+
 end

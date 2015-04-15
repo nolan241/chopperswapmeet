@@ -1,4 +1,4 @@
-<%= form_for(@pin) do |f| %>
+<%= form_for(@pin, :html => { :multipart => true}) do |f| %>
   <% if @pin.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this from being saved:</h2>
@@ -28,19 +28,19 @@
 
   <div class="form-group">
     <%= f.label :price %><br>
-    <%= f.text_field :price, class: "form-control" %>
+      <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <%= f.text_field :price, class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Additional Photos" %><br>
-
+       <%= f.label :pictures %><br>
+       <%= f.file_field :pictures, :multiple => true, name: "pin_attachments[pictures][]" %>
   </div> 
 
   <div class="form-group">
     <%= f.submit "Save", class: "btn btn-primary" %>
   </div>
-
-
-
 
 <% end %>
