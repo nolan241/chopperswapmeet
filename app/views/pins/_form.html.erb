@@ -11,32 +11,59 @@
     </div>
   <% end %>
 
+  <!--Title -->
   <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control" %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Enter Title To Display" %>
   </div>
 
+  <!-- First Photo -->
   <div class="form-group">
     <%= f.label "Main Photo" %><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: "btn-lg" %>
   </div>
 
+  <!-- Description -->
   <div class="form-group" >
     <%= f.label :description %><br>
-    <%= f.text_area :description, class: "form-control", :rows => "10" %>
+    <%= f.text_area :description, class: "form-control", :rows => "10", placeholder: "Describe your listing"%>
   </div>
 
-  <div class="form-group">
-    <%= f.label :price %><br>
-      <div class="input-group">
-      <span class="input-group-addon">$</span>
-      <%= f.text_field :price, class: "form-control" %>
+  <!-- Price and category row -->
+  <div class="row">
+  <div class="container-fluid"> 
+      <!-- Price -->
+    <div class="form-group">
+      <div class="col-md-4">
+        <%= f.label :price %><br>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+            <%= f.text_field :price, class: "form-control", placeholder: "Enter Amount To Display" %>
+      </div>
     </div>
   </div>
 
+  <!-- Category -->
+  <div class="container-fluid"> 
+    <div class="form-group">
+      <div class="col-md-4">
+        <strong>List in:</strong><br>
+        <select class="form-control">
+          <option>Bikes</option>
+          <option>Parts</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- remove row </div> -->
+
+
+  <!-- More Photos -->
   <div class="form-group">
        <%= f.label :pictures %><br>
-       <%= f.file_field :pictures, :multiple => true, name: "pin_attachments[pictures][]" %>
+       <%= f.file_field :pictures, :multiple => true, name: "pin_attachments[pictures][]", class: "btn-lg"  %>
   </div> 
 
   <div class="form-group">
