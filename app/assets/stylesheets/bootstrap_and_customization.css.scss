@@ -2,13 +2,13 @@
 
 $body-bg:                          #ecf0f1;
 $font-family-sans-serif:           'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$navbar-height:                    45px;
+$navbar-height:                    65px;
 $navbar-default-bg:                white;
 $navbar-default-brand-color:       #c0392b;
+$navbar-default-border:						 #c00;
 $brand-primary:                    #c0392b;
 $jumbotron-bg:                     white;
 $panel-heading-padding:						 60px;
-$link-hover-color:								 #c0392b;
 
 @import 'bootstrap';
 
@@ -26,5 +26,9 @@ $link-hover-color:								 #c0392b;
 }
 
 .row {
-     margin-bottom: 100px;	
+     margin-bottom: 50px;	
+}
+
+.navbar-fixed-bottom {
+    padding-top: 25px;	
 }
