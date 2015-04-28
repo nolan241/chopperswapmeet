@@ -35,6 +35,7 @@ group :development, :test do
   gem 'spring'
   gem "better_errors"
   gem 'did_you_mean'
+  gem 'meta_request'
 end
 
 

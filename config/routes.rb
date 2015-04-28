@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :comments
   resources :pin_attachments
   resources :pins
-
   devise_for :users
 
   root "pins#index"

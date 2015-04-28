@@ -9,10 +9,13 @@ class Pin < ActiveRecord::Base
 	validates :image, presence: true
 	validates :price, presence: true
 	validates :title, presence: true
-
+	
 	#carrierwave 
   has_many :pin_attachments
 	accepts_nested_attributes_for :pin_attachments
 
+	#comments
+	has_many :comments
+	#, dependent => :destroy
 
 end

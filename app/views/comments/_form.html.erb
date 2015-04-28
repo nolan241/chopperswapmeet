@@ -1,0 +1,15 @@
+<%= form_for([@post, @comment]) do |f| %>
+  
+  <%= f.hidden_field :pin_id %>
+  <%= f.hidden_field :user_id %>
+ 
+
+ <div class="form-group">
+    <%= f.text_area :body, class: "form-control", :rows => "3", placeholder: "Add Comment" %>
+ </div>
+
+<div class="form-group">
+    <%= f.submit "Comment", class: "btn btn-primary" %>
+</div>
+
+<% end %>

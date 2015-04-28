@@ -3,19 +3,15 @@ class PinsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-
-# Create = new + create
-# Read = Show
-# Read All = Index
-# Update = edit + update
-# Destroy = destroy
-
   def index
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
   end
 
   def show
+   @pin = Pin.find(params[:id])
    @pin_attachments = @pin.pin_attachments.all
+   @comment = @pin.comments.build
+   @comments = Comment.all
   end
 
   def new
@@ -65,6 +61,7 @@ class PinsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     # what a user is able to do to form
     def pin_params
-      params.require(:pin).permit(:title, :description, :price, :image, :pin_attachments)
+      params.require(:pin).permit(:title, :description, :price, :image, :pin_attachments, :comments)
     end
+
 end
