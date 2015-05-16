@@ -8,7 +8,6 @@ class PinsController < ApplicationController
   end
 
   def show
-   @pin = Pin.find(params[:id])
    @pin_attachments = @pin.pin_attachments.all
    @comment = @pin.comments.build
    @comments = Comment.all
@@ -61,7 +60,7 @@ class PinsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     # what a user is able to do to form
     def pin_params
-      params.require(:pin).permit(:title, :description, :price, :image, :pin_attachments, :comments)
+      params.require(:pin).permit(:title, :description, :price, :image, :pin_attachments, :comments, :category_id)
     end
 
 end

@@ -44,16 +44,10 @@
   </div>
 
   <!-- Category -->
-  <div class="container-fluid"> 
-    <div class="form-group">
-      <div class="col-md-4">
-        <strong>List in:</strong><br>
-        <select class="form-control">
-          <option>Bikes</option>
-          <option>Parts</option>
-          <option>Other</option>
-        </select>
-      </div>
+  <div class="form-group">
+    <div class="col-md-4">
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, { include_blank: "Please select..." }, { class: 'form-control' } %>
     </div>
   </div>
 

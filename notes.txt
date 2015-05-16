@@ -13,3 +13,7 @@ masonry framework
 http://masonry.desandro.com/
 
 http://www.rubydoc.info/gems/paperclip/Paperclip/ClassMethods
+
+left off at 
+https://github.com/Thinkful/guide-how-to-learn-ruby-on-rails
+Console

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423203005) do
+ActiveRecord::Schema.define(version: 20150505225402) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -42,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150423203005) do
     t.datetime "image_updated_at"
     t.string   "price"
     t.string   "title"
+    t.integer  "category_id"
   end
 
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"

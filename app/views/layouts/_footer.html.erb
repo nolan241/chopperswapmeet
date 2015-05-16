@@ -1,10 +1,20 @@
-	<div class="navbar navbar-default navbar-fixed-bottom"
-		<footer class="footer">
+	<footer class="footer">
       <div class="container">
-        <p class="text-muted">Fixed footer content test. |
-            <%= link_to "About", about_path %> |
-        		<%= link_to "Blog" %>
+        <p class="text-muted">
+          
+          <% if user_signed_in? %>
+            Logged is as:<%= current_user.name %>
+          <% else %> 
+        
+          <!-- Sign Up -->
+
+          <%= link_to "Create Account", new_user_registration_path %>
+          <%= link_to "Sign In", new_user_session_path %>
+
+          <% end %> |
+          
+          <%= link_to "About", about_path %> |
+        	<%= link_to "Blog" %>
         </p>
     	</div>
    	</footer>
-   </div>

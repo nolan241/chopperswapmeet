@@ -11,11 +11,14 @@ class Pin < ActiveRecord::Base
 	validates :title, presence: true
 	
 	#carrierwave 
-  has_many :pin_attachments
+  	has_many :pin_attachments
 	accepts_nested_attributes_for :pin_attachments
 
 	#comments
 	has_many :comments
 	#, dependent => :destroy
+	
+	#categories
+	belongs_to :category
 
 end
