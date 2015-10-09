@@ -1,12 +1,13 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  resources :pins do
+    resources :comments
+  end
+  
   devise_for :users
-
-  resources :comments
   resources :pin_attachments
   resources :pins
   resources :categories, only: [:show]
 
-  root "pins#index"
+  root "pages#index"
 
   get "about" => "pages#about" #creates about_path
 

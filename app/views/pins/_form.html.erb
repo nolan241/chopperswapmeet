@@ -1,67 +1,67 @@
-<%= form_for(@pin, :html => { :multipart => true}) do |f| %>
-  <% if @pin.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this from being saved:</h2>
-
-      <ul>
-      <% @pin.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <!--Title -->
-  <div class="form-group">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control", placeholder: "Enter Title To Display" %>
-  </div>
-
-  <!-- First Photo -->
-  <div class="form-group">
-    <%= f.label "Main Photo" %><br>
-    <%= f.file_field :image, class: "btn-lg" %>
-  </div>
-
-  <!-- Description -->
-  <div class="form-group" >
-    <%= f.label :description %><br>
-    <%= f.text_area :description, class: "form-control", :rows => "10", placeholder: "Describe your listing"%>
-  </div>
-
-  <!-- Price and category row -->
-  <div class="row">
-  <div class="container-fluid"> 
-      <!-- Price -->
+<div class="container">
+  <%= form_for(@pin, :html => { :multipart => true}) do |f| %>
+    <% if @pin.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this from being saved:</h2>
+  
+        <ul>
+        <% @pin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <!--Title -->
     <div class="form-group">
-      <div class="col-md-4">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, class: "form-control", placeholder: "Enter Title To Display" %>
+    </div>
+  
+    <!-- First Photo -->
+    <div class="form-group">
+      <%= f.label "Main Photo" %><br>
+      <%= f.file_field :image, class: "btn-lg" %>
+    </div>
+  
+    <!-- Description -->
+    <div class="form-group" >
+      <%= f.label :description %><br>
+      <%= f.text_area :description, class: "form-control", :rows => "10", placeholder: "Describe your listing"%>
+    </div>
+  
+  
+  
+    <!-- Price -->
+    <div class="form-group">
+      <div class="col-xs-6 .col-md-4">
         <%= f.label :price %><br>
         <div class="input-group">
           <span class="input-group-addon">$</span>
             <%= f.text_field :price, class: "form-control", placeholder: "Enter Amount To Display" %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Category -->
-  <div class="form-group">
-    <div class="col-md-4">
-    <%= f.label :category %>
-    <%= f.collection_select :category_id, Category.all, :id, :name, { include_blank: "Please select..." }, { class: 'form-control' } %>
+    <!-- Category -->
+    <div class="form-group">
+      <div class="col-xs-6 .col-md-4">
+      <%= f.label :category %>
+      <%= f.collection_select :category_id, Category.all, :id, :name, { include_blank: "Please select..." }, { class: 'form-control' } %>
+      </div>
     </div>
-  </div>
 
-  <!-- remove row </div> -->
-
-
-  <!-- More Photos -->
-  <div class="form-group">
-       <%= f.label :pictures %><br>
-       <%= f.file_field :pictures, :multiple => true, name: "pin_attachments[pictures][]", class: "btn-lg"  %>
-  </div> 
-
-  <div class="form-group">
-    <%= f.submit "Save", class: "btn btn-primary" %>
-  </div>
-
-<% end %>
+<br>
+<br>
+<br>
+    <!-- More Photos -->
+    <div class="form-group">
+         <%= f.label :pictures %><br>
+         <%= f.file_field :pictures, :multiple => true, name: "pin_attachments[pictures][]", class: "btn-lg"  %>
+    </div> 
+  
+    <div class="form-group">
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    </div>
+  
+  <% end %>

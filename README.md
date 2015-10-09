@@ -1,5 +1,2 @@
-# One Month Rails Ahhhhh gain
-
-
-Still pinteresting
-by [nolanm](http:www.nolanm.com)
+tinker with idea for chopper swap meet
+Nolan Morache

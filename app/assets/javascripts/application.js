@@ -10,6 +10,12 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require bootstrap.min.js
+//= require jquery.easing.min.js
+//= require jquery.fittext.js
+//= require creative.js
+//= require wow.min.js
+
 //= require jquery
 //= require masonry/jquery.masonry
 //= require jquery_ujs
@@ -17,3 +23,5 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
+
+

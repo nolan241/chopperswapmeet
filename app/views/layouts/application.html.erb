@@ -6,21 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-	<body>
-		<%= render 'layouts/header' %>
-		<div class="container">
+<!-- Plugin CSS -->
+    <link rel="stylesheet" href="stylesheets/animate.min.css" type="text/css">
 
-			<% flash.each do |name, msg| %>
-			<%= content_tag(:div, msg, class: "alert alert-info") %>
-				
-			<% end %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+    <body id="page-top">
+            
+	        <%= render 'layouts/header' %>
+            <div class="container">
+    			<% flash.each do |name, msg| %>
+    			    <%= content_tag(:div, msg, class: "alert alert-info") %>
+    			<% end %>
+           	</div>
+           	
 
 			<%= yield %>
-		</div>
 
-		<%= render 'layouts/footer' %>
-
+		    <%= render 'layouts/footer' %>
 	</body>
 </html>
